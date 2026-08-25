@@ -1,0 +1,2 @@
+# Uploaded files are served through the application, never directly.
+Require all denied
