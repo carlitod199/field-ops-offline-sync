@@ -1,0 +1,37 @@
+# ---- Secrets -------------------------------------------------------------
+.env
+.env.local
+*.pem
+*.p12
+*.keystore
+
+# ---- Dependencies --------------------------------------------------------
+/vendor/
+node_modules/
+
+# ---- Runtime artefacts ---------------------------------------------------
+*.log
+/api/storage/uploads/
+/api/storage/logs/
+
+# ---- Expo / React Native -------------------------------------------------
+.expo/
+.expo-shared/
+/mobile/android/
+/mobile/ios/
+*.jsbundle
+
+# ---- OS cruft ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editors / IDEs ------------------------------------------------------
+.idea/
+.vscode/
+.fleet/
+nbproject/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
