@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Field Ops",
+    "slug": "field-ops-offline-sync",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "fieldops",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.fieldops",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Field Ops uses the camera to attach photos to an inspection.",
+        "NSPhotoLibraryUsageDescription": "Field Ops attaches images from your library to an inspection.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.example.fieldops",
+      "permissions": ["CAMERA"]
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Field Ops uses the camera to attach photos to an inspection."
+        }
+      ]
+    ]
+  }
+}
