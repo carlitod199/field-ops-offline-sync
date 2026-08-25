@@ -1,0 +1,20 @@
+# All API traffic goes through the front controller.
+RewriteEngine On
+
+# Apache under CGI/FastCGI drops the Authorization header; put it back so
+# core/auth.php can read the bearer token from $_SERVER.
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+# Only index.php is reachable directly; core/, routes/, config.php and the
+# database scripts must never be served as files.
+<FilesMatch "^(?!index\.php$).*\.php$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|log|md)$">
+    Require all denied
+</FilesMatch>
